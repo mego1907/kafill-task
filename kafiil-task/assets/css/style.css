@@ -195,6 +195,10 @@ body {
     display: flex;
   }
 
+  .navbar .logo {
+    width: 120px;
+  }
+
   .navbar .navbar-links {
     width: 100%;
     height: 100%;
@@ -641,6 +645,7 @@ body {
 
 .comment-form {
   margin-top: 64px;
+  padding: 0 25px 0 0;
 }
 
 .comment .comment-right .add-comment textarea {
@@ -650,6 +655,7 @@ body {
   border-radius: 8px;
   padding: 16px;
   font-size: 16px;
+  margin-left: 15px;
 }
 
 .comment .comment-right .add-comment button {
@@ -659,6 +665,7 @@ body {
   font-weight: 500;
   border-radius: 8px;
   margin-top: 16px;
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 767px) {
@@ -1150,9 +1157,10 @@ body {
 
   background-color: #fff;
   min-width: 320px;
-  padding: 15px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.20);
   z-index: 1;
+
+  border-radius: 8px;
 }
 
 .dropdown-content .user {
@@ -1162,31 +1170,45 @@ body {
 
 .dropdown-content .user span {
   font-size: 12px;
-  
+  color: var(--grey-400);
+  font-weight: 400;
 }
 
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
+.dropdown-content .user,
+.dropdown-content .dark-mode .dark-mode_left,
+.dropdown-content .language,
+.dropdown-content .settings,
+.dropdown-content .logout,
+.dropdown-content .my-profile {
+  padding: 14px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--grey-500);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
 }
 
-/* Add a grey background to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
+.dropdown-content .my-profile {
+  border-top: 1px solid var(--grey-50);
+  border-bottom: 1px solid var(--grey-50);
 }
 
-/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown-content .logout {
+  border-top: 1px solid var(--grey-50);
+  color: var(--error);
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
 
   .topnav a:not(:first-child),
   .dropdown .dropbtn {
@@ -1197,7 +1219,7 @@ body {
     float: right;
     display: block;
   }
-}
+} */
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
